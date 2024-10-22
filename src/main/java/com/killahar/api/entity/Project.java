@@ -1,12 +1,12 @@
 package com.killahar.api.entity;
 
+import com.killahar.api.entity.status.ProjectStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Data
 @Entity

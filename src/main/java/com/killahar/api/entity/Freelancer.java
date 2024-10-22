@@ -1,5 +1,6 @@
 package com.killahar.api.entity;
 
+import com.killahar.api.entity.status.FreelancerLevel;
 import jakarta.persistence.*;
 import lombok.Data;
 

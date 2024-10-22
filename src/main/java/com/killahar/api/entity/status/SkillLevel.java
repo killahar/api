@@ -1,4 +1,4 @@
-package com.killahar.api.entity;
+package com.killahar.api.entity.status;
 
 public enum SkillLevel {
     BEGINNER, INTERMEDIATE, ADVANCED, EXPERT
