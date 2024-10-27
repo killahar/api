@@ -8,6 +8,9 @@ import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
 @Data
 @Entity
 public class Project {
@@ -45,8 +48,18 @@ public class Project {
     @Enumerated(EnumType.STRING)
     private ProjectStatus status;
 
+    @ManyToMany
+    @JoinTable(
+            name = "project_required_skills",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
+    private Set<Skill> requiredSkills;
+
+
     // Метод для получения всех активных фрилансеров
     public Set<Freelancer> getActiveFreelancers() {
         return activeFreelancers; // Возвращаем множество активных фрилансеров
     }
 }
+

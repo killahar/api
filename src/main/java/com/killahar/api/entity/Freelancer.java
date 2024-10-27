@@ -40,4 +40,8 @@ public class Freelancer {
             inverseJoinColumns = @JoinColumn(name = "project_id")
     )
     private Set<Project> projects;
+
+    @Column(unique = true, nullable = false)
+    private String email;
+
 }

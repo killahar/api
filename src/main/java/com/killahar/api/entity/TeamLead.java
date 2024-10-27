@@ -18,6 +18,7 @@ public class TeamLead {
     @NotBlank(message = "Имя тимлида не должно быть пустым.")
     private String name;
 
+    @Column(unique = true, nullable = false)
     @NotBlank(message = "Email не должен быть пустым.")
     @Email(message = "Некорректный формат email.")
     private String email;
