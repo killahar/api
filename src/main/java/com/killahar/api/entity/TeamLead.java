@@ -8,7 +8,6 @@ import lombok.Data;
 import java.util.Set;
 import java.util.UUID;
 
-@Data
 @Entity
 public class TeamLead {
     @Id
@@ -25,4 +24,36 @@ public class TeamLead {
 
     @OneToMany(mappedBy = "teamlead")
     private Set<Project> projects;
+
+    public UUID getTeamleadId() {
+        return teamleadId;
+    }
+
+    public void setTeamleadId(UUID teamleadId) {
+        this.teamleadId = teamleadId;
+    }
+
+    public @NotBlank(message = "Имя тимлида не должно быть пустым.") String getName() {
+        return name;
+    }
+
+    public void setName(@NotBlank(message = "Имя тимлида не должно быть пустым.") String name) {
+        this.name = name;
+    }
+
+    public @NotBlank(message = "Email не должен быть пустым.") @Email(message = "Некорректный формат email.") String getEmail() {
+        return email;
+    }
+
+    public void setEmail(@NotBlank(message = "Email не должен быть пустым.") @Email(message = "Некорректный формат email.") String email) {
+        this.email = email;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
 }

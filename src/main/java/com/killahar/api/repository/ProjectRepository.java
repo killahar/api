@@ -2,7 +2,7 @@ package com.killahar.api.repository;
 
 import com.killahar.api.entity.Project;
 import com.killahar.api.entity.status.ProjectStatus;
-import com.killahar.api.entity.TeamLead; // Исправлено импорт
+import com.killahar.api.entity.TeamLead;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

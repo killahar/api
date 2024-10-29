@@ -2,16 +2,11 @@ package com.killahar.api.entity;
 
 import com.killahar.api.entity.status.ProjectStatus;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
-
-@Data
 @Entity
 public class Project {
     @Id
@@ -56,10 +51,85 @@ public class Project {
     )
     private Set<Skill> requiredSkills;
 
+    // Геттеры и сеттеры
 
-    // Метод для получения всех активных фрилансеров
+    public UUID getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(UUID projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public String getProjectDescription() {
+        return projectDescription;
+    }
+
+    public void setProjectDescription(String projectDescription) {
+        this.projectDescription = projectDescription;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public TeamLead getTeamlead() {
+        return teamlead;
+    }
+
+    public void setTeamlead(TeamLead teamlead) {
+        this.teamlead = teamlead;
+    }
+
     public Set<Freelancer> getActiveFreelancers() {
-        return activeFreelancers; // Возвращаем множество активных фрилансеров
+        return activeFreelancers;
+    }
+
+    public void setActiveFreelancers(Set<Freelancer> activeFreelancers) {
+        this.activeFreelancers = activeFreelancers;
+    }
+
+    public Double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Double budget) {
+        this.budget = budget;
+    }
+
+    public ProjectStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(ProjectStatus status) {
+        this.status = status;
+    }
+
+    public Set<Skill> getRequiredSkills() {
+        return requiredSkills;
+    }
+
+    public void setRequiredSkills(Set<Skill> requiredSkills) {
+        this.requiredSkills = requiredSkills;
     }
 }
-

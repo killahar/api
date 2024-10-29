@@ -2,12 +2,10 @@ package com.killahar.api.entity;
 
 import com.killahar.api.entity.status.FreelancerLevel;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.Set;
 import java.util.UUID;
 
-@Data
 @Entity
 public class Freelancer {
     @Id
@@ -44,4 +42,77 @@ public class Freelancer {
     @Column(unique = true, nullable = false)
     private String email;
 
+    // Геттеры и сеттеры
+
+    public UUID getFreelancerId() {
+        return freelancerId;
+    }
+
+    public void setFreelancerId(UUID freelancerId) {
+        this.freelancerId = freelancerId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPortfolio() {
+        return portfolio;
+    }
+
+    public void setPortfolio(String portfolio) {
+        this.portfolio = portfolio;
+    }
+
+    public Set<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(Set<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public FreelancerLevel getFreelancerLevel() {
+        return freelancerLevel;
+    }
+
+    public void setFreelancerLevel(FreelancerLevel freelancerLevel) {
+        this.freelancerLevel = freelancerLevel;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(Double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    public Set<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(Set<Project> projects) {
+        this.projects = projects;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }

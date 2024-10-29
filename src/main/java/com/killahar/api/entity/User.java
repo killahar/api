@@ -1,12 +1,9 @@
 package com.killahar.api.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
 import java.util.Set;
 import java.util.UUID;
 
-@Data
 @Entity
 public class User {
     @Id
@@ -26,4 +23,38 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
+
+    // Геттеры и сеттеры
+
+    public UUID getUserId() {
+        return userId;
+    }
+
+    public void setUserId(UUID userId) {
+        this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }

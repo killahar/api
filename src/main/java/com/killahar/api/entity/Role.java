@@ -1,11 +1,9 @@
 package com.killahar.api.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import java.util.Set;
 import java.util.UUID;
 
-@Data
 @Entity
 public class Role {
     @Id
@@ -17,4 +15,30 @@ public class Role {
 
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
+
+    // Геттеры и сеттеры
+
+    public UUID getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(UUID roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }

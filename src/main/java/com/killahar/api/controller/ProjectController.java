@@ -25,7 +25,7 @@ public class ProjectController {
     private ProjectService projectService;
 
     @Autowired
-    private TeamLeadRepository teamLeadRepository; // Объявление репозитория
+    private TeamLeadRepository teamLeadRepository;
 
     @PostMapping("/create")
     public ResponseEntity<Project> createProject(@Valid @RequestBody Project project) {
@@ -44,7 +44,6 @@ public class ProjectController {
         return ResponseEntity.ok(projects);
     }
 
-    // Новый метод для получения всех фрилансеров по проекту
     @GetMapping("/{projectId}/freelancers")
     public ResponseEntity<Set<Freelancer>> getFreelancersByProject(@PathVariable UUID projectId) {
         Set<Freelancer> freelancers = projectService.getFreelancersByProject(projectId);
@@ -54,3 +53,4 @@ public class ProjectController {
         return ResponseEntity.ok(freelancers);
     }
 }
+
